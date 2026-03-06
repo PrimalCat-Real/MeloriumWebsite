@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -11,15 +11,65 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
+    "formatWithErrors": false,
+    "indentStyle": "tab",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto"
+  },
+  "css": {
+    "parser": {
+      "cssModules": true,
+      "tailwindDirectives": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "trailingCommas": "none",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
+      "correctness": {
+        "noUnusedImports": "info",
+        "noUnusedVariables": "info",
+        "useExhaustiveDependencies": "info"
+      },
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noAsyncPromiseExecutor": "warn",
+        "noConsole": "warn",
+        "noVar": "warn",
+        "noEmptyBlockStatements": "warn",
+        "noDuplicateElseIf": "warn",
+        "noEvolvingTypes": "error"
+      },
+      "style": {
+        "useConst": "warn",
+        "useForOf": "warn",
+        "useImportType": "warn",
+        "useNamingConvention": "warn",
+        "useConsistentArrayType": "warn"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "warn",
+          "fix": "safe",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "cn"]
+          }
+        }
       }
     },
     "domains": {
