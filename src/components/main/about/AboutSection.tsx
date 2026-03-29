@@ -1,12 +1,13 @@
 import GradientText from '@/modules/primalui/text/GradientText'
-import AboutCards from '@/shared/widgets/main/about/AboutCards'
+import AboutCards from '@/shared/features/about/AboutCards'
+
 import React from 'react'
 
 const AboutSection = () => {
     return (
-        <section className='scetion-wrapper grid  grid-cols-1 sm:grid-cols-2 2xl:grid-cols-[minmax(200px,2fr)_minmax(400px,500px)_minmax(400px,500px)_minmax(400px,500px)] w-full gap-2'>
+        <section className='section-wrapper grid  grid-cols-1 sm:grid-cols-2 2xl:grid-cols-[minmax(200px,2fr)_minmax(400px,500px)_minmax(400px,500px)_minmax(400px,500px)] w-full gap-2'>
             <div className=' flex flex-col xl:max-w-175 w-auto col-span-2'>
-                <GradientText className='-inset-y-16 relative text-5xl font-medium bg-linear-to-r from-foreground to-foreground/50 ' render={<h2 />}>
+                <GradientText className='-inset-y-16 relative text-5xl font-medium bg-linear-to-r from-foreground to-foreground/50 uppercase' render={<h2 />}>
                     ОСОБЕНОСТЬ <br />СЕРВЕРА
                 </GradientText>
 
