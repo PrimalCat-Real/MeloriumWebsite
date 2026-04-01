@@ -2,10 +2,12 @@ uniform float time;
 uniform vec2 resolution; 
 
 void main(){
+    vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+    vec2 centered = uv; // кординаты центра
+    float radius = sin(time) * 0.5 +0.5;
+    float dist = length(uv);          
+    float rings = fract(dist * 5.0 - time * 0.5);
+    float new_circle = smoothstep(radius, radius-0.01, rings);
     
-    float redColor = sin(time + 0.0) * 0.5 + 0.5;
-    float greenColor = sin(time + 2.094) * 0.5 + 0.5;  // +120°
-    float blueColor = sin(time + 4.189) * 0.5 + 0.5;  // +240°
-    vec3 color = vec3(redColor, greenColor, blueColor);
-    gl_FragColor = vec4(color,1.0);
+    gl_FragColor = vec4(rings, 0.0, 0.0, 1.0);
 }
