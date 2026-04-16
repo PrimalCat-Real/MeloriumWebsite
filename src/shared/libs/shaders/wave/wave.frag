@@ -1,13 +1,12 @@
-uniform float time;
-uniform vec2 resolution; 
+#define TWO_PI 6.2831853072
+#define PI 3.14159265359
 
-void main(){
+precision highp float;
+uniform vec2 resolution;
+uniform float time;
+
+void main(void) {
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
-    vec2 centered = uv; // кординаты центра
-    float radius = sin(time) * 0.5 +0.5;
-    float dist = length(uv);          
-    float rings = fract(dist * 5.0 - time * 0.5);
-    float new_circle = smoothstep(radius, radius-0.01, rings);
     
-    gl_FragColor = vec4(rings, 0.0, 0.0, 1.0);
+    gl_FragColor = vec4(grid.x, grid.y, 0.0, 1.0);
 }

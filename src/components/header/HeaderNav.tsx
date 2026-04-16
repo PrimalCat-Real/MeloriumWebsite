@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeaderNav = () => {
     return (
-        <nav>HeaderNav</nav>
+        <nav className='flex justify-center'>HeaderNav</nav>
     )
 }
 

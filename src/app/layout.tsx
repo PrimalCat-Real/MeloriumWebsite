@@ -4,6 +4,7 @@ import "./globals.css";
 import ThemeProvider from "@/shared/providers/ThemeProvider";
 import Header from "@/components/header/Header";
 import { cn } from "@/modules/shadcn/lib/utils";
+import ReactLenisRoot from "@/modules/lenis/conponents/ui/ReactLenisRoot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,16 +32,19 @@ export default function RootLayout({
       <body
         className={cn("antialiased", geistSans.variable, geistMono.variable)}
       >
-        <Header></Header>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <ReactLenisRoot>
+          <Header></Header>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </ReactLenisRoot>
       </body>
+
     </html>
   );
 }
