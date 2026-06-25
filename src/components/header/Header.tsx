@@ -1,4 +1,4 @@
-// import type { ReactNode } from 'react'
+﻿// import type { ReactNode } from 'react'
 
 import HeaderActions from "./HeaderActions"
 import HeaderLogo from "./HeaderLogo"
@@ -11,8 +11,8 @@ import HeaderWrapper from "./HeaderWrapper"
 
 const Header = () => {
     return (
-        <HeaderWrapper className="w-full grid grid-cols-3 h-16 items-center fixed top-0 left-0 z-10">
-            <HeaderLogo></HeaderLogo>
+        <HeaderWrapper className="w-full justify-between flex h-16 items-center fixed top-0 left-0 z-10">
+
             <HeaderNav></HeaderNav>
             <HeaderActions></HeaderActions>
         </HeaderWrapper>
