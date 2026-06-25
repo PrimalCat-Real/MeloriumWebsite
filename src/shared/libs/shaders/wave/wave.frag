@@ -8,7 +8,7 @@ uniform float time;
 void main(void) {
     vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
     
-    float t = time * 0.05;
+    float t = time * 0.15;
     float lineWidth = 0.002;
 
     vec3 color = vec3(0.0);
